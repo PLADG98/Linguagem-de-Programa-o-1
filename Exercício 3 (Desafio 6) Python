@@ -1,0 +1,45 @@
+estoque = []
+
+print("=== GERENCIADOR DE ESTOQUE - SORVETERIA ===")
+
+opcao = ""
+while opcao != "3":
+    print("\nMENU PRINCIPAL:")
+    print("1. Adicionar novo produto")
+    print("2. Listar produtos em estoque")
+    print("3. Sair")
+
+    opcao = input("\nEscolha uma opção: ")
+
+    if opcao == "1":
+        print("\n--- Cadastro de Produto ---")
+        nome = input("Digite o nome do produto: ")
+        quantidade = int(input("Digite a quantidade em estoque: "))
+        preco = float(input("Digite o preço unitário: "))
+
+        if quantidade >= 0:
+
+            novo_produto = {"nome": nome, "quantidade": quantidade, "preco": preco}
+            estoque.append(novo_produto)
+            print("Sucesso: Produto cadastrado!")
+        else:
+            print("Erro: A quantidade não pode ser negativa. Cadastro cancelado.")
+
+    elif opcao == "2":
+        print("\n--- Produtos em Estoque ---")
+
+        if not estoque:
+            print("O estoque está vazio no momento.")
+        else:
+            for p in estoque:
+                valor_total = p["quantidade"] * p["preco"]
+                print(
+                    f"Produto: {p['nome']} | Qtd: {p['quantidade']} | Preço: R${p['preco']:.2f} | Total: R${valor_total:.2f}"
+                )
+    elif opcao == "3":
+        print("\nEncerrando o sistema... Até logo!")
+
+    else:
+        print("\nOpção inválida! Tente novamente.")
+
+print("-------------------------------------------")
