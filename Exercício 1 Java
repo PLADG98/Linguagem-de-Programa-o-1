@@ -1,0 +1,42 @@
+import java.util.Scanner;
+import java.util.Locale;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Locale.setDefault(Locale.US);
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("--- Calculadora de Negócios (Java) ---");
+
+        System.out.print("Digite o primeiro número (Investimento): ");
+        double numero1 = sc.nextDouble();
+
+        System.out.print("Digite o segundo número (Retorno): ");
+        double numero2 = sc.nextDouble();
+
+        // Cálculos Aritméticos
+        double soma = numero1 + numero2;
+        double subtracao = numero1 - numero2;
+        double multiplicacao = numero1 * numero2;
+        double divisao = numero1 / numero2;
+
+        // Saída
+        System.out.printf("Soma: %.2f%n", soma);
+        System.out.printf("Subtração: %.2f%n", subtracao);
+        System.out.printf("Multiplicação: %.2f%n", multiplicacao);
+        System.out.printf("Divisão: %.2f%n", divisao);
+
+        // ROI
+        if (numero1 == 0) {
+            System.out.println("Não é possível calcular o ROI com investimento igual a 0.");
+        } else {
+            double roi = (numero2 - numero1) / numero1;
+            System.out.printf("ROI: %.2f%n", roi);
+            System.out.printf("ROI em porcentagem: %.2f%%%n", roi * 100);
+        }
+
+        sc.close();
+    }
+}
