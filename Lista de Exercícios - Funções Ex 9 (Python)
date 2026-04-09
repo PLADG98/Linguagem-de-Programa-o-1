@@ -1,0 +1,31 @@
+VERSÃO 1
+print("--- Contador de Vogais ---")
+
+frase = input("Digite uma palavra ou frase: ")
+vogais = "aeiou"
+contador = 0
+
+for letra in frase.lower():
+    if letra in vogais:
+        contador += 1
+
+print(f"O total de vogais encontradas foi: {contador}")
+
+VERSÃO 2
+def contar_vogais(texto):
+    total = 0
+    vogais = "aeiou"
+    
+    for caractere in texto.lower():
+        if caractere in vogais:
+            total += 1
+            
+    return total
+
+print("--- Contador de Vogais ---")
+
+entrada_usuario = input("Digite o texto para análise: ")
+
+resultado = contar_vogais(entrada_usuario)
+
+print(f"Total de vogais: {resultado}")
