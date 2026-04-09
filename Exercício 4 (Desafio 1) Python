@@ -1,0 +1,8 @@
+A = [3, 5, 7, 9, 11, 13, 15, 17]
+B = [0] * 8
+
+for i in range(len(A)):
+    B[i] = A[i] * 3
+
+print(f"Matriz A: {A}")
+print(f"Matriz B (A x 3): {B}")
