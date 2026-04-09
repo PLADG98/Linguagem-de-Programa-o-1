@@ -1,0 +1,19 @@
+A = []
+B = []
+C = [0.0] * 20
+
+print("--- Entrada de Dados para Matriz A ---")
+for i in range(20):
+    valor = float(input(f"Digite o elemento A[{i}]: "))
+    A.append(valor)
+
+print("\n--- Entrada de Dados para Matriz B ---")
+for i in range(20):
+    valor = float(input(f"Digite o elemento B[{i}]: "))
+    B.append(valor)
+
+for i in range(20):
+    C[i] = A[i] - B[i]
+
+print("\n--- Resultado da Matriz C (A - B) ---")
+print(C)
