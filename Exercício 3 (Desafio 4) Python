@@ -1,0 +1,18 @@
+numero_secreto = 7
+
+print("--- Bem-vindo ao Jogo de Adivinhação! ---")
+print("Tente adivinhar o número que estou pensando.")
+
+palpite = 0
+
+while palpite != numero_secreto:
+    palpite = int(input("\nDigite seu palpite: "))
+    
+    if palpite > numero_secreto:
+        print("Tente um número menor!")
+    elif palpite < numero_secreto:
+        print("Tente um número maior!")
+    else:
+        print("-" * 30)
+        print(f"PARABÉNS! Você acertou! O número era {numero_secreto}.")
+        print("-" * 30)
