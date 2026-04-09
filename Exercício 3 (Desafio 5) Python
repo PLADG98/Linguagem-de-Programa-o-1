@@ -1,0 +1,16 @@
+senha_correta = "senha124"
+
+senha_digitada = ""
+
+print("--- SISTEMA DE LOGIN ---")
+
+while senha_digitada != senha_correta:
+    senha_digitada = input("Digite a sua senha: ")
+
+    if senha_digitada != senha_correta:
+        print("Senha incorreta! Tente novamente.")
+
+print("-" * 30)
+print("Acesso Permitido!")
+print("Bem-vindo ao sistema, usuário.")
+print("-" * 30)
