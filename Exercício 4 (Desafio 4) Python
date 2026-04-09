@@ -1,29 +1,50 @@
-nomes_insumos = []
-quantidades = []
+estoque = []
 
-print("=== FECHAMENTO DE ESTOQUE - SORVETERIA DO DENER ===")
+print("=== GERENCIADOR DE ESTOQUE - SORVETERIA DO DENER ===")
 
-for i in range(1, 4):
-    print(f"\nCadastro do {i}º Produto:")
-    nome = input("Nome do Insumo: ")
-    qtd = int(input(f"Quantidade de {nome} em estoque: "))
-    
-    nomes_insumos.append(nome)
-    quantidades.append(qtd)
+opcao = ""
+while opcao != "3":
+    print("\nMENU PRINCIPAL:")
+    print("1. Adicionar novo produto")
+    print("2. Listar produtos e Relatório de Auditoria")
+    print("3. Sair")
 
-print("\n" + "="*50)
-print("          RELATÓRIO DE AUDITORIA FINAL")
-print("="*50)
+    opcao = input("\nEscolha uma opção: ")
 
-for i in range(len(nomes_insumos)):
-    nome_exibicao = nomes_insumos[i]
-    qtd_exibicao = quantidades[i]
-    etiqueta = ""
+    if opcao == "1":
+        print("\n--- Cadastro de Produto ---")
+        nome = input("Digite o nome do produto: ")
+        quantidade = int(input("Digite a quantidade em estoque: "))
+        preco = float(input("Digite o preço unitário: "))
 
-    if qtd_exibicao < 5:
-        etiqueta = " [REPOSIÇÃO NECESSÁRIA]"
+        if quantidade >= 0:
+            novo_produto = {"nome": nome, "quantidade": quantidade, "preco": preco}
+            estoque.append(novo_produto)
+            print(f"Sucesso: {nome} cadastrado!")
+        else:
+            print("Erro: A quantidade não pode ser negativa. Cadastro cancelado.")
 
-    print(f"Produto: {nome_exibicao:<15} | Estoque: {qtd_exibicao:>3} unidades{etiqueta}")
+    elif opcao == "2":
+        print("\n" + "="*60)
+        print(f"{'PRODUTO':<15} | {'QTD':<5} | {'PREÇO':<10} | {'STATUS'}")
+        print("-" * 60)
 
-print("="*50)
-print("Fim do fechamento de estoque.")
+        if not estoque:
+            print("O estoque está vazio no momento.")
+        else:
+            for p in estoque:
+                etiqueta = ""
+                if p["quantidade"] < 5:
+                    etiqueta = "[REPOSIÇÃO NECESSÁRIA]"
+                
+                print(f"{p['nome']:<15} | {p['quantidade']:<5} | R${p['preco']:>8.2f} | {etiqueta}")
+        
+        print("="*60)
+        
+    elif opcao == "3":
+        print("\nEncerrando o sistema... Fechamento de estoque concluído!")
+
+    else:
+        print("\nOpção inválida! Tente novamente.")
+
+print("-------------------------------------------")
