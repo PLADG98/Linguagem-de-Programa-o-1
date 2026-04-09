@@ -1,0 +1,29 @@
+nomes_insumos = []
+quantidades = []
+
+print("=== FECHAMENTO DE ESTOQUE - SORVETERIA DO DENER ===")
+
+for i in range(1, 4):
+    print(f"\nCadastro do {i}º Produto:")
+    nome = input("Nome do Insumo: ")
+    qtd = int(input(f"Quantidade de {nome} em estoque: "))
+    
+    nomes_insumos.append(nome)
+    quantidades.append(qtd)
+
+print("\n" + "="*50)
+print("          RELATÓRIO DE AUDITORIA FINAL")
+print("="*50)
+
+for i in range(len(nomes_insumos)):
+    nome_exibicao = nomes_insumos[i]
+    qtd_exibicao = quantidades[i]
+    etiqueta = ""
+
+    if qtd_exibicao < 5:
+        etiqueta = " [REPOSIÇÃO NECESSÁRIA]"
+
+    print(f"Produto: {nome_exibicao:<15} | Estoque: {qtd_exibicao:>3} unidades{etiqueta}")
+
+print("="*50)
+print("Fim do fechamento de estoque.")
