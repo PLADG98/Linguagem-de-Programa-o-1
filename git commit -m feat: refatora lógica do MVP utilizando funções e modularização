@@ -1,0 +1,62 @@
+def exibir_cabecalho():
+    verde = "\033[32m"
+    reset = "\033[0m"
+
+    print("\n" + "="*60)
+    print(f" {verde}  SORVETERIA DO DENER - SISTEMA DE GESTÃO {reset} "  )
+    print("="*60)
+
+def verificar_estoque_critico(quantidade):
+
+    if quantidade < 5:
+        return "[REPOSIÇÃO NECESSÁRIA]"
+    return ""
+
+estoque = []
+
+exibir_cabecalho()
+
+opcao = ""
+while opcao != "3":
+    print("\nMENU PRINCIPAL:")
+    print("1. Adicionar novo produto")
+    print("2. Listar produtos e Relatório de Auditoria")
+    print("3. Sair")
+
+    opcao = input("\nEscolha uma opção: ")
+
+    if opcao == "1":
+        print("\n--- Cadastro de Produto ---")
+        nome = input("Digite o nome do produto: ")
+        quantidade = int(input("Digite a quantidade em estoque: "))
+        preco = float(input("Digite o preço unitario: "))
+
+        if quantidade >= 0:
+            novo_produto = {"nome": nome, "quantidade": quantidade, "preco": preco}
+            estoque.append(novo_produto)
+            print(f"Sucesso: {nome} cadastrado!")
+        else:
+            print("Erro: A quantidade não pode ser negativa.")
+
+    elif opcao == "2":
+        exibir_cabecalho()
+        print(f"{'PRODUTO':<15} | {'QTD':<5} | {'PREÇO':<10} | {'STATUS'}")
+        print("-" * 60)
+
+        if not estoque:
+            print("O estoque está vazio no momento.")
+        else:
+            for p in estoque:
+                etiqueta = verificar_estoque_critico(p["quantidade"])
+                
+                print(f"{p['nome']:<15} | {p['quantidade']:<5} | R${p['preco']:>8.2f} | {etiqueta}")
+        
+        print("="*60)
+
+    elif opcao == "3":
+        print("\nEncerrando o sistema... Fechamento de estoque concluído!")
+
+    else:
+        print("\nOpção inválida! Tente novamente.")
+
+print("-------------------------------------------")
