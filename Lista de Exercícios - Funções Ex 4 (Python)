@@ -1,0 +1,24 @@
+VERSÃO 1
+print("--- Boas-Vindas ---")
+
+nome = input("Digite seu nome: ")
+idade = input("Digite sua idade: ")
+
+print(f"Olá, {nome}! Seja bem-vindo(a).")
+
+
+
+VERSÃO 2
+def gerar_mensagem_boas_vindas(nome_usuario, idade_usuario):
+
+    mensagem = f"Olá, {nome_usuario}! Seja bem-vindo(a)."
+    return mensagem
+
+print("--- Boas-Vindas ---")
+
+nome_input = input("Digite seu nome: ")
+idade_input = input("Digite sua idade: ")
+
+texto_final = gerar_mensagem_boas_vindas(nome_input, idade_input)
+
+print(texto_final)
