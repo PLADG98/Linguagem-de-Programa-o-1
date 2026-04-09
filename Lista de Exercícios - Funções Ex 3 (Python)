@@ -1,0 +1,34 @@
+VERSÃO 1
+print("--- Validador de Senha (Procedural) ---")
+
+senha = ""
+
+while len(senha) < 8:
+    senha = input("Digite uma senha (mínimo 8 caracteres): ")
+    
+    if len(senha) < 8:
+        print("Senha muito curta! Tente novamente.")
+
+print("Senha cadastrada com sucesso!")
+
+
+
+VERSÃO 2
+def validar_senha(senha_texto):
+    
+    if len(senha_texto) >= 8:
+        return True
+    else:
+        return False
+
+print("--- Validador de Senha (Modular) ---")
+
+senha_usuario = ""
+
+while not validar_senha(senha_usuario):
+    senha_usuario = input("Digite sua senha: ")
+    
+    if not validar_senha(senha_usuario):
+        print("Erro: A senha precisa de pelo menos 8 caracteres.")
+
+print(" Senha validada pela função.")
