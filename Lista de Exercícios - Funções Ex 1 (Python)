@@ -1,0 +1,23 @@
+VERSÃO 1
+print("--- Verificador de Paridade (Procedural) ---")
+
+numero = int(input("Digite um número inteiro: "))
+
+if numero % 2 == 0:
+    print(f"O número {numero} é PAR.")
+else:
+    print(f"O número {numero} é ÍMPAR.")
+
+
+
+VERSÃO 2
+def verificar_paridade(n):
+    if n % 2 == 0:
+        print(f"O número {n} é PAR.")
+    else:
+        print(f"O número {n} é ÍMPAR.")
+
+print("--- Verificador de Paridade (Modular) ---")
+num_usuario = int(input("Digite um número inteiro: "))
+
+verificar_paridade(num_usuario)
