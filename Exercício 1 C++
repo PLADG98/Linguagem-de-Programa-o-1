@@ -1,0 +1,40 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    double numero1, numero2;
+
+    cout << "--- Calculadora de Negócios (C++) ---" << endl;
+
+    cout << "Digite o primeiro número (Investimento): ";
+    cin >> numero1;
+
+    cout << "Digite o segundo número (Retorno): ";
+    cin >> numero2;
+
+    // Cálculos Aritméticos
+    double soma = numero1 + numero2;
+    double subtracao = numero1 - numero2;
+    double multiplicacao = numero1 * numero2;
+    double divisao = numero1 / numero2;
+
+    cout << fixed << setprecision(2);
+
+    cout << "Soma: " << soma << endl;
+    cout << "Subtração: " << subtracao << endl;
+    cout << "Multiplicação: " << multiplicacao << endl;
+    cout << "Divisão: " << divisao << endl;
+
+    // Desafio ROI
+    if (numero1 == 0) {
+        cout << "Não é possível calcular o ROI com investimento igual a 0." << endl;
+    } else {
+        double roi = (numero2 - numero1) / numero1;
+        cout << "ROI: " << roi << endl;
+        cout << "ROI em porcentagem: " << roi * 100 << "%" << endl;
+    }
+
+    return 0;
+}
