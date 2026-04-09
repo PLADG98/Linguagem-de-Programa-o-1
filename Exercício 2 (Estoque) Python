@@ -1,0 +1,23 @@
+# 1. Declaração de variáveis e entrada de dados
+nome_do_produto = input("Digite o nome do produto: ")
+quantidade_em_estoque = int(input("Digite a quantidade em estoque: "))
+preco_unitario = float(input("Digite o preço unitário: "))
+
+print("-" * 30)
+
+# 2. Implementação da validação (Estrutura de Decisão)
+if quantidade_em_estoque >= 0:
+    # Se a quantidade for válida (não negativa)
+    print("CADASTRO REALIZADO COM SUCESSO!")
+    print(f"Produto: {nome_do_produto}")
+    print(f"Quantidade: {quantidade_em_estoque}")
+    print(f"Preço Unitário: R$ {preco_unitario:.2f}")
+    
+    # Cálculo extra opcional para enriquecer o MVP
+    valor_total = quantidade_em_estoque * preco_unitario
+    print(f"Valor Total em Estoque: R$ {valor_total:.2f}")
+else:
+    # Se a quantidade for inválida (negativa)
+    print("Erro: A quantidade não pode ser um valor negativo. Por favor, tente novamente.")
+
+print("-" * 30)
