@@ -1,0 +1,29 @@
+VERSÃO 1
+print("--- Calculadora de Desconto ---")
+
+valor_original = float(input("Digite o valor do produto: R$ "))
+porcentagem = float(input("Digite a porcentagem de desconto (ex: 10): "))
+
+valor_do_desconto = valor_original * (porcentagem / 100)
+valor_final = valor_original - valor_do_desconto
+
+print(f"Desconto aplicado: R$ {valor_do_desconto:.2f}")
+print(f"Valor final com desconto: R$ {valor_final:.2f}")
+
+
+
+VERSÃO 2
+def aplicar_desconto(preco, taxa_desconto):
+    desconto = preco * (taxa_desconto / 100)
+    return preco - desconto
+
+print("--- Calculadora de Desconto (Modular) ---")
+
+preco_prod = float(input("Qual o preço do item? R$ "))
+taxa = float(input("Qual a porcentagem de desconto? "))
+
+preco_final = aplicar_desconto(preco_prod, taxa)
+
+print("-" * 30)
+print(f"O valor com desconto aplicado é: R$ {preco_final:.2f}")
+print("-" * 30)
