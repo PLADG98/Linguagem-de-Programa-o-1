@@ -1,0 +1,23 @@
+VERSÃO 1
+print("--- Conversor de Temperatura ---")
+
+celsius = float(input("Digite a temperatura em Celsius: "))
+
+fahrenheit = (celsius * 9/5) + 32
+
+print(f"{celsius}°C equivale a {fahrenheit:.2f}°F")
+
+
+
+VERSÃO 2
+def celsius_para_fahrenheit(valor_celsius):
+    
+    f = (valor_celsius * 9/5) + 32
+    return f
+
+print("--- Conversor de Temperatura (Modular) ---")
+
+temp_c = float(input("Digite a temperatura em Celsius: "))
+temp_f = celsius_para_fahrenheit(temp_c)
+
+print(f"Resultado da Conversão: {temp_f:.2f}°F")
