@@ -1,0 +1,16 @@
+A = []
+B = [0] * 15
+
+print("--- Entrada de Dados (15 números inteiros) ---")
+for i in range(15):
+    valor = int(input(f"Digite o valor para A[{i}]: "))
+    A.append(valor)
+
+for i in range(15):
+    B[i] = A[i] ** 2  # Em Python, ** é o operador de potência
+
+print("\n" + "="*30)
+print(f"{'Índice':<8} | {'Matriz A':<10} | {'Matriz B (Quadrado)':<15}")
+print("-" * 40)
+for i in range(15):
+    print(f"{i:<8} | {A[i]:<10} | {B[i]:<15}")
