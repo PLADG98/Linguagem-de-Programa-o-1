@@ -1,0 +1,41 @@
+VERSÃO 1
+print("--- Classificador de Notas ---")
+
+nota = float(input("Digite a nota (0-100): "))
+
+if nota >= 90:
+    categoria = 'A'
+elif nota >= 80:
+    categoria = 'B'
+elif nota >= 70:
+    categoria = 'C'
+elif nota >= 60:
+    categoria = 'D'
+else:
+    categoria = 'E'
+
+print(f"A classificação para a nota {nota} é: {categoria}")
+
+
+
+
+VERSÃO 2
+def classificar_nota(valor_nota):
+   
+    if valor_nota >= 90:
+        return 'A'
+    if valor_nota >= 80:
+        return 'B'
+    if valor_nota >= 70:
+        return 'C'
+    if valor_nota >= 60:
+        return 'D'
+    return 'E'
+
+print("--- Classificador de Notas ---")
+
+entrada_nota = float(input("Digite a nota do aluno (0-100): "))
+
+resultado_letra = classificar_nota(entrada_nota)
+
+print(f"Resultado Final: Categoria {resultado_letra}")
