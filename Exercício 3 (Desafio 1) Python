@@ -1,0 +1,11 @@
+print("Listagem de Números:")
+for numero in range(1, 11):
+    print(numero)
+
+print("-" * 20) 
+print("Listagem de Nomes:")
+
+nomes = ["Ana", "Bruno", "Carla", "Daniel", "Eduarda"]
+
+for nome in nomes:
+    print(nome)
