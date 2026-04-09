@@ -1,0 +1,8 @@
+numero = 0
+while numero <= 10:
+    numero = int(input("Digite um número (digite um valor maior que 10 para sair): "))
+    
+    if numero <= 10:
+        print(f"Você digitou {numero}. Ainda é menor ou igual a 10, tente novamente!")
+
+print("\nObrigado por participar! Você digitou um número maior que 10.")
